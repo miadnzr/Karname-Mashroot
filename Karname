@@ -1,0 +1,74 @@
+using System;
+namespace project
+{
+    class Moadel
+    {
+        private string name;
+        private string family;
+        private string id;
+        private double nomre;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public string Family
+        {
+            get { return family; }
+            set { family = value; }
+        }
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public double Nomre
+        {
+            get { return nomre; }
+            set
+            {
+                if (value > 0)
+                { nomre = value; }
+            }
+        }
+        public Moadel() { }
+        public Moadel(string Name, string Family, string  Id, double Nomre)
+        { name = Name; family = Family; id = Id; nomre = Nomre; }
+        public string calc()
+        {
+            if (nomre >= 12 && nomre <= 20)
+            { return "Normal"; }
+
+            else if (nomre <= 0)
+            { return " nomreh ra sahih vared knid "; }
+
+            else if (nomre > 20)
+            { return " nomreh ra sahih vared knid "; }
+
+
+            else
+            { return "Mashroot shdi"; }
+        }
+    }
+    class main
+    {
+        static void Main()
+        {
+            Console.WriteLine("Enter Your Name: ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Enter Your Last Name: ");
+            string family = Console.ReadLine();
+
+            Console.WriteLine("Enter Your Id : ");
+            string id = Console.ReadLine();
+
+            Console.WriteLine("Enter Your Grade: ");
+            double nomre = Convert.ToDouble(Console.ReadLine());
+
+            Moadel moaddel = new Moadel(name, family, id, nomre);
+            Console.WriteLine(moaddel.calc());
+            Console.ReadKey();
+        }
+    }
+}
